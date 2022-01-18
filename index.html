@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="maincontainer">
+        <!--Navigation bar-->
+        <div class="navigation">
+            <div class="navi"><a href="#"style="text-decoration: none;"style="color: white;">Home</a></div>
+            <div class="navi"><a href="#"style="text-decoration: none;">About</a></div>
+            <div class="navi"><a href="#"style="text-decoration: none;">Work</a></div> 
+            <div class="navi"><a href="#"style="text-decoration: none;">Contact</a></div>
+            <div class="curser"></div>
+    </div>
+        <div class="container">
+            
+        <div class="boxinfo">
+            <p class="sectionhead">On This Day</p>
+<h1>The Fake News Fallacy</h1>
+<h2>Old fights about radio have lessons for new fights about the Internet</h2>
+<p class="byline"> By Adrian Chen</p>
+
+        </div>
+        <div class="box"> <img src="img/Capture.jpg"></div>
+    
+</div>
+
+</div>
+
+<div class="btncontainer">
+    <div class="posterbox">
+        <a href="#" class="btn"><span><img src="img/1.png"></span></a>
+    </div>
+    <div class="posterbox">
+        <a href="#" class="fill"><span><img src="img/untitled.17.png"></span></a>
+    </div>
+</div>
+<div class="container2">
+    <h1 class="text" data-src="img/untitled.17.png">asdasdasd</h1>
+    
+    <h1 class="text" data-src="img/untitled.17.png">asdassdasddasd</h1>
+    
+    <h1 class="text" data-src="img/untitled.17.png">asdasffasdasd</h1>
+<img src="img/untitled.17.png" class="hover-img" alt="">
+</div>
+<!--script-->
+    <script>
+        const curser = document.querySelector('.curser');
+        document.addEventListener('mousemove', (e)=>{
+            curser.style.left = e.clientX + "px";
+            curser.style.top = e.clientY + "px";
+        })
+
+        const btn = document.querySelector('.btn');
+        btn.onmousemove = function(e){
+            const x = e.pageX - btn.offsetLeft;
+            const y = e.pageY - btn.offsetTop;
+
+            btn.style.setProperty('--x', x + 'px');
+            btn.style.setProperty('--y', y + 'px');
+        }
+
+
+        const fill = document.querySelector('.fill');
+        fill.onmousemove= function(e){
+            const x = e.pageX - fill.offsetLeft;
+            const y = e.pageY - fill.offsetTop;
+
+            fill.style.setProperty('--x', x + 'px');
+            fill.style.setProperty('--y', y + 'px');
+        }
+
+        let container2 = document.querySelector('.container2');
+        let img = container2.querySelector('.hover-img');
+
+        document.body.onmousemove= (e) => {
+            let x = e.pageX;
+            let y = e.pageY;
+            img.style.top = y + 'px';
+            img.style.left = x + 'px';
+        }
+
+        container2.querySelectorAll('.text').forEach(text =>{
+            text.onmousemove = () =>{
+                img.src = text.getAttribute('data-src');
+            }
+        })
+    </script>
+</body>
+</html>

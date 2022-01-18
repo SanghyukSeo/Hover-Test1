@@ -1,0 +1,426 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Karla';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/karla/v15/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNlCV3lGb7PnGw.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Karla';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/karla/v15/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNlCV3lIb7M.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/karla/v15/qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqaHUlKd7c.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/karla/v15/qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqaE0lK.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  
+body{
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;      /*the center of viewpoint height
+    
+    
+    justify-content: center;
+    align-items: center;
+    */
+}
+.btncontainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.posterbox{
+    display: flex;
+    height: 100%;
+    width: 50%;
+}
+.posterbox img{ 
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+}
+.fill{
+
+    background-size: 100%; /* To fill the dimensions of container (button), or */
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    background: rgb(73, 73, 73);
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    overflow: hidden;
+    border-radius: 0%;
+}
+
+
+.fill::before{
+    content: '';
+    position:absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: scale(3);
+    width: 300rem;
+    height: 300rem;
+    border-radius: 50%;
+    background:rgba(80, 16, 0, 0.849);
+    mix-blend-mode: difference;
+    transition: 0.5s;
+    transition-timing-function: ease-out;
+    transform: translate(-50%,-50%);
+}
+
+.fill span{
+    position: relative;
+    z-index: 1; /*뒤로*/
+}
+
+.fill:hover::before{
+    width: 20rem;
+    height: 20rem;
+    filter: hue-rotate(90deg);
+}
+
+.btn{
+    background-size: 100%; /* To fill the dimensions of container (button), or */
+    background-repeat: no-repeat; 
+    background-color: transparent;
+    background-repeat: no-repeat; 
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    background: rgb(73, 73, 73);
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    overflow: hidden;
+    border-radius: 0%;
+}
+.btn span{
+    position: relative;
+    z-index: 1; /*뒤로*/
+}
+.btn::before{
+    content: '';
+    position:absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background:tomato;
+    mix-blend-mode: difference;
+    transition: width 0.3s, height 0.3s;
+    transform: scale(10);
+    transition-timing-function: ease-out;
+}
+.btn:hover::before{
+    width: 300px;
+    height: 300px;
+}
+
+a:link {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+
+.maincontainer{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+}
+.container {
+    background-color: blueviolet;
+    height: 600px;
+    width: 100%;
+    display: flex;
+}
+.container2{
+    padding: 10%;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+.container2 .text{
+    color: blue;
+    cursor: pointer;
+}
+.container2 .text:hover{
+    color: rgb(171, 171, 255);
+    position: relative;
+    z-index: 100;
+}
+.container2 .text:hover ~.hover-img{
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+}
+.hover-img{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%) scale(.5);
+    pointer-events: none;
+}
+.navigation{
+    
+    margin-top: 50px;
+    margin-left: 30px;
+    height: 100%;
+    width: 100px;
+}
+
+
+.navi{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 50%;
+    margin-bottom: 30%;
+    display: flex;
+    flex-direction: column; 
+    text-decoration: none; 
+    color: white;
+    transition: 0.1s;
+    
+}
+.box{
+    background-color: rgb(214, 106, 106);
+    height: 100%;
+    width: 50%;
+}
+
+.boxinfo{
+    
+    background-color: black;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/*
+ul{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{                /*ul > li > a 
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin: 2rem 0;
+    font-size: 2rem;
+    text-decoration: none;  /* href 이기 때문에 누르면 변하는 성질이라 언더라인이 있는데 이것을 보이지 않게 해주는 것 
+    color: white;
+    transition: 0.1s;
+}
+
+li:first-child:hover ~ :nth-child(2){
+    visibility: hidden;
+}
+li:first-child:hover ~ :nth-child(3){
+    visibility: hidden;
+}
+li:first-child:hover ~ :nth-child(4){
+    visibility: hidden;
+}*/
+
+.curser{
+    position: fixed;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background:rgb(255, 255, 255);
+    transition:0s;
+    transform: translate(-50%,-50%);    /*커서위에 마우스가 오도록 */
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+.navigation >.navi:hover ~ .curser{          /* ul > li 에 호버하면  .curser class 가 바뀌게 */
+    
+    transition: 0.15s;
+    width: 7rem;
+    height: 7rem;
+    transition: width 0.3s, height 0.3s;
+    /*
+    background-color: turquoise;
+    opacity: 60%;
+    */
+}
+
+
+.byline{
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 20%;
+}
+
+.sectionhead{
+    color: rgb(153, 226, 255);
+    margin-bottom: 3%;
+}
+
+h1{
+    font-size: 50px;
+   color: white;
+   margin-bottom: 5%;
+}
+
+h2{
+    color: white;
+    margin-left: 15%;   
+    margin-right: 15%;
+    font-style: italic;
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 768px){ 
+
+    
+a:link {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+
+
+    .maincontainer{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        height: 100%;
+        width: 100%;
+    }
+    .container {
+        background-color: blueviolet;
+        height: 1200px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation{
+    
+        margin-top: 0%;
+        margin-left: 0%;
+        height: 10%;
+        width: 100%;
+    }
+    .box{
+        background-color: rgb(214, 106, 106);
+        height: 100%;
+        width: 100%;
+    }
+    .boxinfo{
+        background-color: black;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    
+.navi{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.7rem;
+    width: 24.5%;
+    margin-top:3%;
+    display:inline-block;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3%;
+}
+.btncontainer{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+.posterbox{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+}
